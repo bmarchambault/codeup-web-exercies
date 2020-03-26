@@ -10,33 +10,34 @@
 <div>
     <form method="POST" action="https://request-inspector.glitch.me/">
         <div>
-            <label for="email">Email Address</label>
-            <input id="email" type="email">
+            <label for="email" >Email Address</label>
+            <input id="email" type="email" placeholder="type email address here ">
         </div>
         <div>
-            <label for="password">Password</label>
-            <input id="password" type="password">
+            <label for="password" >Password</label>
+            <input id="password" type="password" placeholder="type password here ">
         </div>
         <div>
             <label for="bio">Please tell us about yourself
-                <textarea id="bio" name="bio_body" rows="5" cols="40">type your bio here</textarea>
+                <textarea id="bio" name="bio_body" rows="5" cols="40" placeholder="type your bio here"></textarea>
             </label>
         </div>
         <div>
             <p>How did you hear about us?</p>
-            <label for="q1">
-                <input type="radio" id="q1" name="q1" value="billboard"> Billboard
+            <label>
+                <input type="radio" id="billboard" name="q1" value="billboard"> Billboard
             </label>
-            <label for="q2">
-                <input type="radio" id="q2" name="q1" value="radio advertisement"> Radio Advertisement
+            <label>
+                <input type="radio" id="radio" name="q1" value="radio advertisement"> Radio Advertisement
             </label>
-            <label for="q3">
-                <input type="radio" id="q3" name="q1" value="internest advertisement"> Internet Advertisement
+            <label>
+                <input type="radio" id="internet" name="q1" value="internet advertisement"> Internet Advertisement
             </label>
-            <label for="q4">
-                <input type="radio" id="q4" name="q1" value="other"> Other
+            <label>
+                <input type="radio" name="q1" id="other"  value="other"> Other
             </label>
-
+        </div>
+        <div>
             <label for="browser"> Which web browser are you currently using?
                 <select id="browser" name="browser">
                     <option value="firefox">Firefox</option>
