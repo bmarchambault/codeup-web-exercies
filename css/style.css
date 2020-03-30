@@ -1,4 +1,72 @@
 .fancy-header {
     color: blue; /* single line comment */
     text-decoration: underline;
+    text-align: center;
+}
+
+.h2 {
+    color:darkred;
+    text-decoration: underline;
+}
+
+body {
+    background: beige;
+    font-family: 'Crimson Text', serif;
+}
+
+body:after {
+    content: "";
+    background: url("../img/brown.jpeg");
+    background-size: cover;
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.list {
+    list-style: lower-alpha;
+}
+
+a:link {
+font-size: 1em;
+}
+
+a:visited {
+color: crimson;
+}
+
+a:hover {
+color: aqua;
+}
+
+a:active {
+color: black;
+}
+
+table {
+    width: 80%
+}
+
+table, th, td {
+    border: 2px solid olive;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px
+}
+
+th {
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+    height: 15px
+}
+
+td {
+    text-align: left;
 }
