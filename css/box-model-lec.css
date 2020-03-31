@@ -1,0 +1,46 @@
+body {
+    background-color: dimgrey;
+    color: whitesmoke;
+}
+
+img {
+    box-sizing: border-box;
+    background: whitesmoke;
+    border: 5px solid black;
+    margin: 25px;
+    padding: 10px;
+    height: 300px;
+    width: 400px;
+}
+
+#content {
+    background: rebeccapurple;
+    height: 400px;
+    width: 400px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#padding {
+    background: palevioletred;
+    height: 200px;
+    width: 200px;
+    margin: 0;
+    padding-right: 150px;
+    overflow: hidden;
+}
+#border {
+    height: 250px;
+    width: 250px;
+    margin: 0;
+    padding: 0;
+    background: cornflowerblue;
+    border: 5px solid darkorange;
+}
+#margin {
+    width: 250px;
+    height: 100px;
+    background: darkgreen;
+    margin: 10px;
+}
