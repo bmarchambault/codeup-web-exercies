@@ -1,0 +1,62 @@
+/*
+{
+--info-bg:#cddeff;
+}
+this is a variable with a value of a color and called below.
+ you must also add the class of the element that you wish to apply in html
+ */
+
+
+
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+.message {
+    width:80%;
+    height: 20px;
+    margin: 10px auto;
+    padding: 10px 80px 10px 10px;
+    border-radius:5px;
+    border: 1px solid rgb(210 210 210);
+}
+/*instructor solution:
+.message {
+    margin: .25em;
+    padding: .5em;
+    border: 1px #d2d2d2 solid;
+    border-radius: 10px;
+    }*/
+
+.message-info {
+    color: rgb(39 27 135); /* call the variable function here
+    instead of the color: var(--info-bg) don't forget to add info-bg as
+    a class in the html file*/
+    background-color: rgb(205 222 255);
+/*Instructor solution:
+    color: #cddeff;
+    background-color: #2b208a;
+    (same for the next 2, just dif colors)
+    */
+}
+
+.message-success {
+    color: rgb(0 98 42);
+    background-color: rgb(207 243 218);
+}
+
+.message-warning {
+    color: rgb(130 109 0);
+    background-color: rgb(252 251 201);
+}
+
+.message-error {
+    color: rgb(121 9 37);
+    background-color: rgb(250 211 215);
+}
+
+/**/
