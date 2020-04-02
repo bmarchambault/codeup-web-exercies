@@ -11,7 +11,7 @@
 //     the input is at least 8 characters
 // in length. It should return false for all other string inputs.
 
-    function isAtLeaseEightLong(str){
+    function isAtLeastEightLong (str) {
         if (str.length>= 8){
             return true;
         } else {
@@ -21,7 +21,7 @@
 //to test//
 
     console.log(isAtLeastEightLong ("cat")); //false
-    console.log(isAtLeaseEightLong("strawberry")); //true
+    console.log(isAtLeastEightLong("strawberry")); //true
 
 //return str.length>=8; (another way of completeing this)//
 
@@ -40,7 +40,7 @@
             (x < 0);{
                 return (x + 2);
             }
-        }
+        }}
 
 //instructor solution:
 //     function twoMoreAwayFromZero (num) {
@@ -50,12 +50,31 @@
 //         return num -2;
 //     }
 //     }}
-    console.log(twoMoreAwayFromZero(2)); will return 4
-    console.log (twoMoreAwayFromZero(0)); will return 2
-    console.log (twoMoreAwayFromZero(0.5)); will return 2.5
-    console.log ( twoMoreAwayFromZero(-2) );will return -4
-    console.log( twoMoreAwayFromZero(-3.5) );will return -5.5
+    console.log (twoMoreAwayFromZero(2)); // return 4;
+    console.log (twoMoreAwayFromZero(0)); //will return 2;
+    console.log (twoMoreAwayFromZero(0.5)); //will return 2.5;
+    console.log ( twoMoreAwayFromZero(-2) );//will return -4;
+    console.log( twoMoreAwayFromZero(-3.5) );//will return -5.5;
 
+// Write a function definition named isNegativeEven that takes in a number and returns true or
+//false if the value is both less than zero and even.
+
+        function isNegativeEven (x) {
+            var negNum = (x % 2) * -1;
+            // var posNum = (x%2)
+            return negNum === 0 && negNum >= 0;
+        }
+console.log(isNegativeEven(4));// will return false;
+console.log(isNegativeEven(3));   //pos and odd should be false
+console.log(isNegativeEven(-3));   //neg odd should be false
+console.log(isNegativeEven(-4));   //neg even should be true
+
+    //right a function that returns the quotient of two numbers (assume teh arguments will be numbers)
+
+    function quotient (x,y) {
+        return (x / y);
+    }
+    console.log (quotient (20, 4));
 
 </script>
 
