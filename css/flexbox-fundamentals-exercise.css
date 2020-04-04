@@ -36,8 +36,7 @@ h2, h3 {
     /* enter needed declarations here */
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-
+    justify-content: space-evenly;
 }
 
 section {
@@ -55,7 +54,7 @@ section:nth-of-type(1) {
 }
 section:nth-of-type(1) div:last-child {
     /* enter needed declarations here */
-    display: flex;
+    /*display: flex;*/
     align-self: flex-start;
 }
 
@@ -85,6 +84,12 @@ section:nth-of-type(1) div:last-child {
 section:nth-of-type(3) {
     /* enter needed declarations here */
     justify-content: space-between ;
+/*    instructor solution: justify-content: flex-end
+    align-items: center
+     and just flex grow 1 for h3*/
+/*    another solution is:
+    align-items: center and only
+    flex-grow:1 below*/
 }
 
 section:nth-of-type(3) h3 {
@@ -117,7 +122,7 @@ section:nth-of-type(3) h3 {
 
 section:nth-of-type(5) {
     /* enter needed declarations here */
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .yellow-box {
@@ -131,6 +136,7 @@ section:nth-of-type(6) {
     height: 14em;
     /* enter needed declarations here */
     flex-wrap: wrap;
+    /*flex-wrap:wrap could also be applied to the section selector*/
     justify-content: space-between;
     align-items: center;
 }
