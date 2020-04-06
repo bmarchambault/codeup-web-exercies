@@ -12,14 +12,14 @@
 // in length. It should return false for all other string inputs.
 
     function isAtLeastEightLong (str) {
-        if (str.length>= 8){
+        if (str.length>= 8) {
             return true;
         } else {
         return false;
         }
-}
-//to test//
 
+//to test//
+//
     console.log(isAtLeastEightLong ("cat")); //false
     console.log(isAtLeastEightLong("strawberry")); //true
 
@@ -43,13 +43,13 @@
         }}
 
 //instructor solution:
-//     function twoMoreAwayFromZero (num) {
-//     if (num >=0) {
-//         return num + 2;
-//     } else {
-//         return num -2;
-//     }
-//     }}
+    function twoMoreAwayFromZero (num) {
+    if (num >=0) {
+        return num + 2;
+    } else {
+        return num -2;
+    }
+    }}
     console.log (twoMoreAwayFromZero(2)); // return 4;
     console.log (twoMoreAwayFromZero(0)); //will return 2;
     console.log (twoMoreAwayFromZero(0.5)); //will return 2.5;
@@ -60,14 +60,14 @@
 //false if the value is both less than zero and even.
 
         function isNegativeEven (x) {
-            var negNum = (x % 2) * -1;
+            var negNum = (x % 2) * -1; {
             // var posNum = (x%2)
             return negNum === 0 && negNum >= 0;
-        }
-console.log(isNegativeEven(4));// will return false;
-console.log(isNegativeEven(3));   //pos and odd should be false
-console.log(isNegativeEven(-3));   //neg odd should be false
-console.log(isNegativeEven(-4));   //neg even should be true
+        }}
+// console.log(isNegativeEven(4));// will return false;
+// console.log(isNegativeEven(3));   //pos and odd should be false
+// console.log(isNegativeEven(-3));   //neg odd should be false
+// console.log(isNegativeEven(-4));  //neg even should be true
 
     //right a function that returns the quotient of two numbers (assume teh arguments will be numbers)
 
@@ -76,10 +76,33 @@ console.log(isNegativeEven(-4));   //neg even should be true
     }
     console.log (quotient (20, 4));
 
-//    write a function that returns the number 7
+   // write a function that returns the number 7
     function theNumSeven (x) {
         return 7;
     }
+
+// Write a JavaScript function that takes in an argument, and will return the boolean true if the argument is an even number, and false for all other arguments.
+
+//     function  ifEven (x) {
+//         if (x === 0) {
+//         return true;
+//     } else if {
+//         (x !== 0); {
+//         return false;
+//     }}
+// }
+
+console.log (iseven)(-3);
+console.log (iseven(4));
+
+//instuctor solution:
+//     function isEvenNum (x) {
+//         if (x % 2 === 0)
+//         {            return true;
+//     } else {
+//         return false;
+//                 }}
+
 
 </script>
 
