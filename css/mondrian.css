@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: auto;
+
+}
+
+main {
+    display: inline-grid;
+    /*border: 2em solid white;*/
+    width: 500px;
+    height: 500px;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-areas: "one one two two two two two two" "one one two two two two two two" "three three two two two two two two" "three three four four five five five five" "three three four four five five five five" "six six four four seven seven seven seven" "six six four four seven seven seven seven" "eight eight nine nine nine nine nine nine";
+}
+
+main div {
+    display: grid;
+    border: 5px solid black;
+    justify-content: center;
+    align-items: center;
+}
+
+.one {
+    grid-area: one;
+}
+
+/*grid-row-start: ;*/
+/*grid-row-end: ;*/
+/*grid-column-start: ;*/
+/*grid-column-end: ;*/
+/*}*/
+.two {
+    grid-area: two;
+}
+
+.three {
+    grid-area: three;
+}
+
+.four {
+    grid-area: four;
+}
+
+.five {
+    grid-area: five;
+}
+
+.six {
+    grid-area: six;
+}
+
+.seven {
+    grid-area: seven;
+}
+
+.eight {
+    grid-area: eight;
+}
+
+.nine {
+    grid-area: nine;
+}
+
+.yellow {
+    /*grid-area:yellow;*/
+    background-color: yellow;
+}
+
+.navy-blue {
+    /*grid-area: blue;*/
+    background-color: navy;
+}
+
+.white {
+    /*grid-area: white;*/
+    background-color: white;
+}
+
+.red {
+    /*grid-area: red;*/
+    background-color: darkred;
+}
+
