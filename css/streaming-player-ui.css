@@ -16,9 +16,12 @@ body {
      /* define five columns where the middle three columns are */
      /*400px and the outer columns fill the remaining space*/
     grid-template-columns: 1fr 400px 400px 400px 1fr;
+    /*could also:  grid-template-columns: 1fr repeat(3, 400px) 1fr;*/
     /* To do: add a gap of 1em around all grid items */
     grid-gap: 1em;
     height: 100vh;
+    /*we need to set the height to the size of the screen to force the main area (which has an
+    overflow of auto) to have a scroll bar.*/
     /* no row properties are needed */
     /* TO DO: the height of the wrapper should be 100 viewport height units */
 }
@@ -36,7 +39,7 @@ header {
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 2;
-    grid-column-end: 5;
+    grid-column-end: span 3;
 }
 
 nav {
@@ -57,11 +60,14 @@ main {
     grid-column-end: 5;
     /* TO DO: make main a grid container as well */
     display: grid;
+    /*this is a nested grid.  the wrapper is the main grid.  this grid is to define the
+    cards in the html*/
     /* TO DO: define main to contain three columns that together take up
         equally the full width of main and have a 1em gap between grid items */
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 1em;
     overflow: auto;
+/*    overflow auto allows for scrolling through this section without setting the nav and header to fixed position*/
 }
 
 header ul {
@@ -93,6 +99,7 @@ header a:hover {
     /* TO DO: define the grid area of this element to take up the entire
          first row of the .container grid  */
     grid-area: 1/1/2/6;
+/*    this is an overlapping fix*/
 }
 
 nav ul {
@@ -138,7 +145,7 @@ nav a:hover {
     position: relative;
     /* TO DO: add a property that causes a transition of the border from
          lightgrey to near black in .2 seconds */
-    transition: border .2s ease-out;
+    transition: border .2s;
 
 }
 
