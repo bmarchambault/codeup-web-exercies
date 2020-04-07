@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+/*    this helps line up content within the page*/
+}
+body {
+    margin: 0;
+    /*makes content flush with edge of screen*/
+    font-family: monospace;
+}
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+}
+
+h1 {font-size: 4em}
+/*you can clean up one line code by deleting the semicolon and arranging like above.
+make sure to add teh semicolon if you need to add additional changes*/
+h2 {
+    font-size: 3em;
+}
+h3 {
+    font-size: 2em;
+}
+
+p, a, button {
+    font-family: "Roboto";
+/*    should set some websafe fonts here*/
+}
+
+button {
+    font-size: 1.2em;
+    background: black;
+    color: white;
+    border: none;
+    padding: 1em;
+    border-radius: .2em;
+    margin: 2em 0;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 20%) 1fr;
+    /*Determining Columns
+consider the overall layout. In looking at the content width minus the background image, we see that there
+is extra space on the left and right sides of the page. We can create a grid with fractional-sized beginning and
+ending columns to create this space. In the main area of content toward the center of the page, we see that at most,
+we have three sections across in the area beneath the background image. Considering this number, we can define three
+columns in between our fractional unit columns, accounting for five columns total for our grid.
+
+Determining Grid Areas and Gap
+In deciding on rows, we should consider more carefully the grid areas of this layout. We could define the entire
+content within the background image as the first row, taking up the three inner columns. Each of the three selling
+point sections beneath the header take up one inner column each in the second row. Beneath these three sections,
+an additional section contains the list of brands that spans all three inner columns of the third row. Finally a
+footer takes up the remaining three columns of the last (fourth) row. */
+    grid-template-areas:
+            ". header header header ."
+            ". section-1 section-2 section-3 ."
+            ". section-4 section-4 section-4 ."
+            ". footer footer footer .";
+    grid-row-gap: 7em;
+    grid-column-gap: 3em;
+/*    More space is needed between rows so we use both properties rather than the single shorthand grid-gap property.*/
+}
+.logo {
+    font-family: 'Great Vibes', cursive;
+    font-size: inherit;
+}
+.background-img {
+    background: url("../img/instruments.jpg") no-repeat center/cover fixed;
+    /*background-size: cover; can do the /cover up above instead*/
+    grid-area: 1 / 1 / 2 / -1;
+    min-height: 100vh;
+    opacity: .4;
+    z-index: -1;
+/*  place the background image on our grid using grid lines and z-index to allow the
+header to sit on top of it .
+
+*/
+}
+header {
+    grid-area: header;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+section:nth-of-type(1) {
+    grid-area: section-1;
+}
+section:nth-of-type(2) {
+    grid-area: section-2;
+}
+section:nth-of-type(3) {
+    grid-area: section-3;
+}
+section:nth-of-type(4) {
+    grid-area: section-4;
+}
+footer {
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3em;
+}
+i {
+    font-size: 2em;
+    margin-bottom: 1em;
+}
+a {
+    text-decoration: none;
+    color: mediumblue;
+}
+.brands {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+    list-style: none;
+    font-size: 2em;
+    letter-spacing: 10px;
+}
+.brand-1 {
+    font-family: "Comic Sans MS";
+}
+.brand-2 {
+    font-family: "fantasy";
+}
+.brand-3 {
+    font-family: "monospace";
+    font-weight: bold;
+}
+.brand-4 {
+    font-family: "courier";
+}
+.footer-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    list-style: none;
+    align-self: flex-end;
+}
+.footer-links li {
+    padding: 1em;
+}
