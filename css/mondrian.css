@@ -1,25 +1,41 @@
 * {
     box-sizing: border-box;
+
 }
 
 body {
     margin: auto;
-
+    text-align: center;
+    margin-top: 2em;
+    background-color: #f2f2f2;
 }
 
 main {
     display: inline-grid;
-    /*border: 2em solid white;*/
     width: 500px;
     height: 500px;
+    border: #FFFFFF 20px solid;
+    border-radius: 20px;
+
+    /*box-shadow: lightgray 5px 5px;*/
+
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(8, 1fr);
-    grid-template-areas: "one one two two two two two two" "one one two two two two two two" "three three two two two two two two" "three three four four five five five five" "three three four four five five five five" "six six four four seven seven seven seven" "six six four four seven seven seven seven" "eight eight nine nine nine nine nine nine";
+    grid-template-areas:
+    "one one two two two two two two"
+    "one one two two two two two two"
+    "three three two two two two two two"
+    "three three four four five five five five"
+    "three three four four five five five five"
+    "six six four four seven seven seven seven"
+    "six six four four seven seven seven seven"
+    "eight eight nine nine nine nine nine nine";
 }
 
 main div {
     display: grid;
-    border: 5px solid black;
+    border: 4px solid black;
+    outline: 2px solid black;
     justify-content: center;
     align-items: center;
 }
