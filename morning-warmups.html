@@ -33,14 +33,14 @@
 <!--    twoMoreAwayFromZero(-2) will return -4-->
 <!--    twoMoreAwayFromZero(-3.5) will return -5.5-->
 
-    function twoMoreAwayFromZero (x) {
-        if (x >= 0) {
-            return (x + 2);
-        } else {
-            (x < 0);{
-                return (x + 2);
-            }
-        }}
+    // function twoMoreAwayFromZero (x) {
+    //     if (x >= 0) {
+    //         return (x + 2);
+    //     } else {
+    //         (x < 0);{
+    //             return (x + 2);
+    //         }
+    //     }}
 
 //instructor solution:
     function twoMoreAwayFromZero (num) {
@@ -49,7 +49,7 @@
     } else {
         return num -2;
     }
-    }}
+    }
     console.log (twoMoreAwayFromZero(2)); // return 4;
     console.log (twoMoreAwayFromZero(0)); //will return 2;
     console.log (twoMoreAwayFromZero(0.5)); //will return 2.5;
@@ -64,10 +64,10 @@
             // var posNum = (x%2)
             return negNum === 0 && negNum >= 0;
         }}
-// console.log(isNegativeEven(4));// will return false;
-// console.log(isNegativeEven(3));   //pos and odd should be false
-// console.log(isNegativeEven(-3));   //neg odd should be false
-// console.log(isNegativeEven(-4));  //neg even should be true
+console.log(isNegativeEven(4));// will return false;
+console.log(isNegativeEven(3));   //pos and odd should be false
+console.log(isNegativeEven(-3));   //neg odd should be false
+console.log(isNegativeEven(-4));  //neg even should be true
 
     //right a function that returns the quotient of two numbers (assume teh arguments will be numbers)
 
@@ -83,7 +83,7 @@
 
 // Write a JavaScript function that takes in an argument, and will return the boolean true if the argument is an even number, and false for all other arguments.
 
-//     function  ifEven (x) {
+//     function  isEven (x) {
 //         if (x === 0) {
 //         return true;
 //     } else if {
@@ -92,16 +92,38 @@
 //     }}
 // }
 
-console.log (iseven)(-3);
-console.log (iseven(4));
+// console.log (isEven)(-3);
+// console.log (isEven(4));
 
 //instuctor solution:
-//     function isEvenNum (x) {
-//         if (x % 2 === 0)
-//         {            return true;
-//     } else {
-//         return false;
-//                 }}
+    function isEvenNum (x) {
+        if (x % 2 === 0)
+        {            return true;
+    } else {
+        return false;
+                }}
+
+// Write a function, returnEvenOddMessage, that takes in a number input and returns the string "is even" if the number
+// input is even and returns the string "is odd" if the number input is odd.
+//     HINT: Is there some code you have already written that can be used to solve the problem?
+    function isEven(x){
+        if (x%2===0) {
+            return "is even";
+        } else {
+            return "is odd";
+        }
+    }
+
+    // also, you can call the previous function
+        if (ifEvenNum(num)) {
+        return "is even";
+        }else{
+            return"is odd";
+        }
+    }
+    console.log (isEven (4));
+    console.log (isEven(5));
+
 
 
 </script>
