@@ -1,0 +1,27 @@
+
+.jumbotron{
+    background-image: url("../img/pizza.png");
+}
+#jb-h1 {
+    background-color:rgba(240, 240, 245, 0.5);
+    padding: 0;
+}
+ul {
+    list-style: none;
+}
+input {padding: 1em;
+    margin-right: 1em;
+
+}
+.input-group {
+    padding:.5em;
+
+}
+.input-group-text {
+    background-color: #FFFFFF;
+    width: 200px;
+}
+label {
+    margin-top: 5px;
+    background-color: transparent;
+}
