@@ -22,25 +22,25 @@
 //
     console.log(isAtLeastEightLong ("cat")); //false
     console.log(isAtLeastEightLong("strawberry")); //true
-
-//return str.length>=8; (another way of completeing this)//
-
-<!--    Write a function, twoMoreAwayFromZero that takes in a number input and returns a number two more away from zero than the original input. Negative number inputs will be reduced by two and positive numbers and zero will be increased by two.-->
-<!--    Examples:-->
-<!--    twoMoreAwayFromZero(2) will return 4-->
-<!--    twoMoreAwayFromZero(0) will return 2-->
-<!--    twoMoreAwayFromZero(0.5) will return 2.5-->
-<!--    twoMoreAwayFromZero(-2) will return -4-->
-<!--    twoMoreAwayFromZero(-3.5) will return -5.5-->
-
-    // function twoMoreAwayFromZero (x) {
-    //     if (x >= 0) {
-    //         return (x + 2);
-    //     } else {
-    //         (x < 0);{
-    //             return (x + 2);
-    //         }
-    //     }}
+//
+////return str.length>=8; (another way of completeing this)//
+//
+//<!--    Write a function, twoMoreAwayFromZero that takes in a number input and returns a number two more away from zero than the original input. Negative number inputs will be reduced by two and positive numbers and zero will be increased by two.-->
+//<!--    Examples:-->
+//<!--    twoMoreAwayFromZero(2) will return 4-->
+//<!--    twoMoreAwayFromZero(0) will return 2-->
+//<!--    twoMoreAwayFromZero(0.5) will return 2.5-->
+//<!--    twoMoreAwayFromZero(-2) will return -4-->
+//<!--    twoMoreAwayFromZero(-3.5) will return -5.5-->
+//
+   // function twoMoreAwayFromZero (x) {
+   //     if (x >= 0) {
+   //         return (x + 2);
+   //     } else {
+   //         (x < 0);{
+   //             return (x + 2);
+   //         }
+   //     }}
 
 //instructor solution:
     function twoMoreAwayFromZero (num) {
@@ -60,7 +60,7 @@
 //false if the value is both less than zero and even.
 
         function isNegativeEven (x) {
-            var negNum = (x % 2) * -1; {
+            let negNum = (x % 2) * -1; {
             // var posNum = (x%2)
             return negNum === 0 && negNum >= 0;
         }}
@@ -121,8 +121,82 @@ console.log(isNegativeEven(-4));  //neg even should be true
             return"is odd";
         }
     }
-    console.log (isEven (4));
-    console.log (isEven(5));
+    // console.log (isEven (4));
+    // console.log (isEven(5));
+
+// Write a javascript function that returns true or false as to whether or
+// not a number passed into the function is a whole number.
+
+function isWholeNum(num) {
+    if (num + Number.isInteger(num)){
+        return true;
+    }
+}
+console.log (isWholeNum(5.5));
+console.log(isWholeNum(5));
+
+//instructor solution
+
+//     function isWholeNumber(num) {
+//         return num === Math.round(num);
+//     }
+// console.log (isWholeNumber(5.5));
+// console.log(isWholeNumber(5));
+
+// Write a JavaScript function that takes in two numbers, and returns the larger value. Assume all inputs are numbers.
+    function isLargerOfTwoNum (num1, num2) {
+        if (num1>num2) {
+            return num1;
+        } else {
+            return num2;
+        }
+
+    }
+ console.log (isLargerOfTwoNum(4, 5)); //return 5
+    console.log (isLargerOfTwoNum(12, 9)); //return 12
+//    I got isLargerOfTwoNum correct with no help :)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
