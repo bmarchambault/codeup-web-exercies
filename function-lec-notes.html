@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Functions Lecture</title>
+</head>
+<body>
+​
+​
+<script>
+    "use strict"
+
+    /*
+        OUTLINE OF LECTURE
+​
+        the problem that functions solve...
+            repetition of a process
+            logical grouping of instructions
+​
+        what functions are
+​
+        how to call a function
+            the difference between including the () or not
+            how to pass arguments to a function
+                pass correct amount
+                pass none when defined
+                pass more
+​
+        assigning the value vs. definition of a function to a variable
+​
+        syntax for a function declaration
+            return statement
+            parameters
+​
+        syntax for function expression
+​
+        solving a few example functions
+​
+        !! mini-exercises !!
+​
+        scope
+            global and local variables
+            side effects
+            pure functions
+​
+        higher order functions
+            callbacks
+            anonymous functions
+​
+        IIFE
+​
+    */
+
+    // *** SEE NOTES ***
+
+
+    // ===== CALLING A FUNCTION
+
+    //     the difference between including the () or not
+    //     how to pass arguments to a function
+    //         pass correct amount
+    //         pass none when defined
+    //         pass more
+
+    // bark("Bow wow");
+    // console.log(bark("Bow"));
+    // console.log(bark());
+    // console.log(bark("bow wow", 3, true, "asdf"));
+
+
+    // ===== ASSIGNING VALUE VS. DEFINITION
+
+    // var dogSound = bark("WOOF!");
+    // console.log(dogSound);
+
+    // var makeDogSound = bark;
+    // console.log(makeDogSound);
+    // console.log(makeDogSound("hello"));
+
+
+    /* ===== FUNCTION DECLARATION
+​
+        function doSomething(OPTIONAL_PARAMETERS) {
+            // doing something...
+            return SOME_VALUE;
+        }
+​
+    */
+
+    // function returnInputAsOutput(input) {
+    //     return input;
+    // }
+    //
+    // console.log(returnInputAsOutput(3));
+
+    /* ===== FUNCTION EXPRESSION
+​
+        var someVariable = function(OPTIONAL_PARAMETERS) {
+            // do something
+            return SOME_VALUE;
+        };
+​
+    */
+
+    // function sayHello(greeting) {
+    //     return greeting;
+    // }
+    //
+    // var sayHello = function(greeting) {
+    //     return greeting;
+    // };
+
+
+
+    // ================= MINI PROBLEMS===============================
+    //see mini problems.html
+
+    // ====================== SCOPE=================================
+
+    // var keyword creates "Function Scope" variables
+
+    // var globalVar = "Look, I'm Global!"; // declare a global variable
+    //
+    // function scopeExample() {
+    //     var localVar = "Look, I'm Local!"; // declare a local variable
+    //alway declare variables at the top of a function.
+    //     alert(localVar); // localVar is accessible here
+    //     alert(globalVar); // globalVar is accessible here
+    //     nestedFunction();
+    // }
+    // console.log(globalVar);
+    //console.log(localVar);
+
+
+
+    //scopeExample();
+
+    // alert(localVar); // localVar is NOT accessible here and this will produce an error
+
+
+    // EXTRA SCOPE EXAMPLE
+
+    // var x = 300;
+    // var y = 100;
+    //
+    // function scopeExample2(x, y) {
+    //     var x = 1;
+    //     var y = 2;
+    //     console.log('x: ' + x + ' y: ' + y);
+    //this console log will use the x and y within this function and ignore the global given values of
+    // 300 and 100 - this is because this console log is with in the function
+    //     return x + y;
+    // }
+    //
+    // scopeExample2();
+    // console.log('x: ' + x + ' y: ' + y);
+    //this console log will use 300 and 100
+
+    //console.log(scopeExample2(4, 5));
+    //this log will use the given inputs of 4 and 5 instead of global
+
+
+    // ======================= SIDE EFFECTS VS. PURE FUNCTIONS=========================
+
+
+    // // function with side effects
+    // var word = "hello";
+    //
+    // function shoutWord() {
+    //     return word.toLocaleUpperCase();
+    // }
+    //
+    // // pure function
+    // function shoutWord(word) {
+    //     return word.toLocaleUpperCase();
+    // }
+    //
+    //
+    // // function with side effects
+    // var startCount = 1;
+    //
+    // function count() {
+    //     return ++count;
+    // }
+    //
+    // // pure function
+    // function count(startCount) {
+    //     return ++startCount;
+    // }
+
+
+    // =====================  CALLBACK, ANONYMOUS, HIGHER ORDER FUNCTIONS==========================
+    //
+    // function returnFive() {
+    //     return 5;
+    // }
+    // addTwo is a "Higher Order Function" because it takes in other functions as arguments
+    // functions that return a function are also "Higher Order Functions"
+
+    // function addTwo(fn) {
+    //     return fn() + 2;
+    // }
+    //
+    // console.log(addTwo(returnFive)); // Callback function "returnFive" is passed to addTwo
+    //here, returnFive is being used without the ()
+
+    //another option is to make it an anonymous function like below:
+
+    // console.log(addTwo(function() { // Anon function passed to addTwo()
+    //     return 10;
+    // }))
+
+    // other common higher order functions built in to JS: setInterval, setTimeout, map, filter, reduce, fetch
+
+
+    // =====  IIFE (immediately invoked function expression)
+
+        // (function(){
+
+        //    start: ()():
+        //    (enter function here and a set of parenthesis followed by curly brackets)();
+        //     (function(){})();
+        //     hit return between the curly brackets
+        //     (function(){
+        //
+        //         -----wrap your scrip code -----
+        //
+        //     })();
+        //
+        // })();
+
+
+    ​
+</script>
+
+                    <!--# Function Objectives (by the end of JavaScript I)-->
+                    <!--​-->
+                    <!--I can...-->
+                    <!--​-->
+                    <!--___explain in plain english what a function is and why to use them in JS-->
+                    <!--​-->
+                    <!--___call a previously defined function and use it as a value in my code-->
+                    <!--​-->
+                    <!--___write from memory the template of a function expression and a function declaration-->
+                    <!--​-->
+                    <!--___write a function that returns a defined value (output)-->
+                    <!--​-->
+                    <!--___write a function that can take in an input value-->
+                    <!--​-->
+                    <!--___write a function that consists of any combination of data types for the inputs and output-->
+                    <!--​-->
+                    <!--___write a function that can take in multiple input values-->
+                    <!--​-->
+                    <!--___write a function that causes "side-effects"-->
+                    <!--​-->
+                    <!--___write a "pure" function-->
+                    <!--​-->
+                    <!--___describe how functions in JS are "first-class citizens"-->
+                    <!--​-->
+                    <!--___define the following concepts:-->
+                    <!--​-->
+                    <!-- - Calling a Function-->
+                    <!-- - Function Parameter-->
+                    <!-- - Function Argument-->
+                    <!-- - Local Variable-->
+                    <!-- - Global Variable-->
+                    <!-- - Callback Function-->
+                    <!-- - Anonymous Function-->
+                    <!-- - Immediately Invoked Function Expression-->
+                    <!-- - Pure Function-->
+                    <!-- - Function Side-Effects-->
+                    <!-- - Function Scope-->
+                    <!-- - Higher Order Function-->
+                    <!-- - Hoisting-->
+                    <!-- - Recursion-->
+
+
+
+</body>
+</html>
+
