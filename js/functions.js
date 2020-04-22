@@ -1,5 +1,21 @@
 "use strict";
 
+(function(){
+
+
+
+
+
+
+//as a developer, youre able to access and test these things out in the console.  its great for us, but if we can
+//do it, so can the user.  Also, other libraries may have these same functions and will conflict.
+//the way to prevent that is to wrap the script in an immediately invoked function.
+//will be first and last line of this code. (function(){hit return here})();
+
+
+
+
+
 /**
  * TODO:
  * Create a function called 'sayHello' that takes a parameter 'name'.
@@ -91,18 +107,26 @@ var random = Math.floor((Math.random() * 3) + 1);
 //     return totalTipAmt.toFixed(2);
 // }
 //
+
+//===================================================================
+// // //INSTRUCTOR SOLUTION:
+// function calculatorTip(tipPer, bill) {
+//     return tipPer * bill;
+// }
+//===================================================================
+
 // //
 // console.log(calculatorTip(.2, 20), 4);
 // console.log(calculatorTip(.25, 25.50), 6.37);
 // console.log(calculatorTip(.15, 33.42), 5.01);
 //
 
-/**
+/***********************************
  * TODO:
  * Use prompt and alert in combination with your calculateTip function to
  * prompt the user for the bill total and a percentage they would like to tip,
  * then display the dollar amount they should tip
-//  */
+//  **********************************/
 
 
 // var tipAmt = prompt("what percent would you like to tip?");
@@ -115,7 +139,32 @@ var random = Math.floor((Math.random() * 3) + 1);
 // }
 // alert('Your tip:' + ' $' + calculatorTip() + ".");
 //
+//==========================================================================
+//INSTRUCTOR SOLUTION:
+// var bill = prompt('What is your total bill?');
+// var tip = prompt("How much would you like to tip?");
 //
+// // he console logged these var to see if they worked.
+//     they came back and strings (console.log(typeof bill);
+//     Therefore he converted using number constructor:
+//
+// var bill = Number(prompt('What is your total bill?'));
+// var tip = Number(prompt("How much would you like to tip?"));
+
+// the tip needs to be divided by 100
+
+// var bill = Number(prompt('What is your total bill?'));
+// var tip = Number(prompt("How much would you like to tip?"));
+// var tipPercentage = tip/100;
+// var tipDollars = calculatorTip(tipPer, bill).toFixed(2);
+//
+// // Next he created the alert:
+//
+// alert("You will need to tip" + " $" + tipDollars);
+
+//===============================================================================
+
+
 /**
  * TODO:
  * Create a function named `applyDiscount`. This function should accept a price
@@ -141,4 +190,21 @@ function applyDiscount (price, discount){
     return discountedPrice;
 }
 
+// //=================================================================================================
+// //INSTRUCTOR SOLUTION
+// function applyDiscount(price, discount) {
+//     return price - (price * discount);
+// }
+//================================================================================================
 console.log(applyDiscount(100, .2), '80.00');
+console.log(applyDiscount(45.99, .12), 40.4712);
+
+
+
+
+
+
+
+
+
+})();
