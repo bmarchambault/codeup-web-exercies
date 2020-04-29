@@ -19,11 +19,14 @@ showMultiplicationTable(9)
 
 
     for (var i = 0; i <= 9; i += 1) {
-        var randomNumber = Math.floor((Math.random() * 200) + 20);
+        var randomNumber = Math.floor((Math.random() * 200-20 +1) + 20);
+        //instructor created var evenOddMessage = "";
         if (randomNumber % 2 ===0){
+            //instead of consolelog - evenOddMess = " iseven";
             console.log( randomNumber + " is even");
         }else {
             console.log(randomNumber + " is odd");
+            //evenOddMess = " is oss";
         }
     }
 
@@ -46,7 +49,32 @@ for (i = 1; i <= 9; i++) {
 console.log(String(i).repeat(i));
 }
 
-
+    //instructor solutions:
+    //first example:
+// for (var i = 1; i <= 9; i +=1) {//executes first.  if true the body runs
+//     var output = "";
+//     for (var j = 1; j <= i; j += 1) {//after the output of the i, the body of this runs. so j starts at 1, then checks
+        //if j is less that or equal to current value of i, if true,  then increases in number;
+        //the increase is no longer less than the current value of i, so it breaks the loop and then it creates the
+        //output and returns to the first loop which increases i.
+//         output += i; // this concatnates i to the output
+//     }
+//     console.log(output);
+// }
+//
+// second example:
+// for (var i = 1; i <=9; i +=1) {
+//     console.log(i.string().repeat(i));
+// }
+//  third example as a Function:
+// function displayNumPyramid() {
+//     var output = "";
+//     for (var i = 1; i <=9; i +=1) {
+//         output += i.string().repeat(i) + "\n";
+//     }
+//     return output;
+// }
+// console.log(displayNumPyramid());
 
     // for (var j = 0; j < i; j++){
     //     if(i===9 && j === i-1){

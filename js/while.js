@@ -28,10 +28,20 @@ while (i < 17) {
         i++;
     }
 
-
-
-
-
+//Instructor solution:
+// function displayDoubleTwo() {
+//     var output = "";
+//     var i = 2;
+//     while (i <= 65536) {
+//         output += I + "\n";
+//         i *= 2;
+//     }
+//     return output:
+// }
+// console.log(displayDoubleTwo());
+//
+//
+//
 //Do While Loop
 // An ice cream seller can't go home until she sells all of her cones. First write enough code that generates a random
 // number between 50 and 100 representing the amount of cones to sell before you start your loop. Inside of the loop

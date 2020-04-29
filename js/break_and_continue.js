@@ -31,17 +31,17 @@
 // Here is an odd number: 45
 // Here is an odd number: 47
 // Here is an odd number: 49
-
+function isValidNumber ()...
 do{
     var getUserNumber = parseFloat (prompt("Please enter an odd number between 1 & 50."));//numeric value
     var oddNumber = (getUserNumber % 2 ===1);
     var isValidNumber = ( oddNumber) && (getUserNumber >= 1) && (getUserNumber <= 50); //boolean value
     if(isValidNumber){//if this is true
-        console.log("Number to skip is: " + getUserNumber);//display numberic NOT boolean value
+        console.log("Number to skip is: " + getUserNumber);//display numeric NOT boolean value
         break;
     }
 } while (true);
-for (i = 1; i <= 50; i += 2) { //( i+=2 increment by 2), by starting at 1, we skip every other number - dispaying odd #'s
+for (var i = 1; i <= 50; i += 2) { //( i+=2 increment by 2), by starting at 1, we skip every other number - dispaying odd #'s
     if (i === getUserNumber) {
         console.log("Yikes!  Skipping number: " + getUserNumber)
         continue;
