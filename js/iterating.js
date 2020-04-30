@@ -84,7 +84,13 @@ console.log(names.length);
     function returnLastElement(array) {
         return array[3] + " is the last name in the array";
     }
-
+    //function returnLastElement(array) {
+    //         return array[-1] + " is the last name in the array";
+    //     }//should be return arr[arr.length-1];
+    //should be :
+    //function returnLastElement(array){
+    //  return array{array.length-1] = " is the last name in the array";
+    //}
     console.log(returnLastElement(names));
 
 

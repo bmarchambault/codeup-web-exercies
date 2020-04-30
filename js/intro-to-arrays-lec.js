@@ -23,7 +23,11 @@
 //       arrayname.length
 //
 // to return the last element in an array:
-//     console.log(arrayname.length - 1);
+//     console.log(array.length - 1);
+//         to use in a function:
+//         function returnLastElement(array) {
+//             return array[array.length-1] + " is the last name in the array";
+//         }
 //
 // assign the length of a array into a var:
 //      var arrLength = arrayname.length;
@@ -31,7 +35,23 @@
 //
 // iterating over arrays:
 //     can be confusing because we just learned for loops.  iterating over arrays is almost like
-//
+
+// TO PULL VALUES FROM AN ARRAY AND CREATE A NEW ARRAY:
+//         var originalArray = [1, 2, 'dog', 'cat', 3, 'mouse', '4'];
+//         --need to make a bucket to catch:
+//         var numberArray = []
+//         create a function to use later maybe
+//         function separateNumValues(arr){
+//             var numberArray = [];
+//             arr.forEach(function(element) {
+//                 if(typeof (element)=== 'number'){//put a parsefloat in front of the element to catch the '4'.
+//                 numberArray.push(element);
+//             }
+//             });
+//             return numberArray;
+//         }
+//         console.log(separateNumValues(originalArray));
+// //
 // FOR LOOPS AND ARRAYS:
 //
 //     var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'violet'];
@@ -109,7 +129,7 @@ console.log(pies);
 
 
 // TODO: Set the following array equal to a variable called `daysOfTheWeek` - then console.log the variable
-var daysOfTheWeek = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', "sunday"];
+// var daysOfTheWeek = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', "sunday"];
 
 
 // TODO: create an array of favorite foods and set to a variable called `favoriteFoods` - then console.log the variable
@@ -201,7 +221,9 @@ for (var i = 0; i < daysOfTheWeek.length; i++){
 
 // TODO: Using a for loop, iterate through the favoriteFoods array and console.log each favorite food
 
-// TODO: Refactoring the instructor loop, alert "hey, I know <INSTRUCTOR NAME HERE>" if you have had class with that instructor. If you have not had class with that instructor, alert "I haven't had class with <INSTRUCTOR NAME HERE> yet!"
+// TODO: Refactoring the instructor loop, alert "hey, I know <INSTRUCTOR NAME HERE>" if you have had class with that
+//  instructor. If you have not had class with that instructor, alert "I haven't had class with <INSTRUCTOR NAME HERE>
+//  yet!"
 
 for (var i = 0; i < instructors.length; i++) {
     console.log(shapes[i]);
