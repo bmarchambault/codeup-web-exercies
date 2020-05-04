@@ -65,24 +65,24 @@ var allCones = Math.floor(Math.random() * 50) + 50;
 do{
    //write code of what you want to happen here.
 
-}while();
+}while(true);
 
 
-
-
-do{
-    if(isValidNumber){//if this is true
-        console.log("Number to skip is: " + getUserNumber);//display numberic NOT boolean value
-        break;
-    }
-
-
-} while (true);
-for (i = 1; i <= 50; i += 2) { //( i+=2 increment by 2), by starting at 1, we skip every other number - dispaying odd #'s
-    if (i === getUserNumber) {
-        console.log("Yikes!  Skipping number: " + getUserNumber)
-        continue;
-    } else {
-        console.log("Here is an odd number: " + i);
-    }
-}
+//
+//
+// do{
+//     if(isValidNumber){//if this is true
+//         console.log("Number to skip is: " + getUserNumber);//display numberic NOT boolean value
+//         break;
+//     }
+//
+//
+// } while (true);
+// for (i = 1; i <= 50; i += 2) { //( i+=2 increment by 2), by starting at 1, we skip every other number - dispaying odd #'s
+//     if (i === getUserNumber) {
+//         console.log("Yikes!  Skipping number: " + getUserNumber)
+//         continue;
+//     } else {
+//         console.log("Here is an odd number: " + i);
+//     }
+// }
