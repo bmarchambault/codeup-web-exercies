@@ -1,0 +1,312 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM Lecture</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        body {
+            background: #eee;
+            min-height: 1800px;
+        }
+    </style>
+</head>
+<body>
+<header class="container">
+    <div class="jumbotron bg-success">
+        <h1 id="main-title" class="text-center text-light">Document Object Model <small>(DOM)</small></h1>
+    </div>
+</header>
+<main class="container">
+
+    <section class="row">
+        <div class="col">
+            <h2>Some Table</h2>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>First</th>
+                    <th>Last</th>
+                    <th>Handle</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td>@twitter</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col">
+            <h2>Some List</h2>
+            <ul class="list-group">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Morbi leo risus</li>
+                <li class="list-group-item">Porta ac consectetur ac</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+        </div>
+    </section>
+    <hr>
+    <section class="row">
+        <div class="col-12">
+            <h2>Some Items</h2>
+        </div>
+        <div class="col-md-3 d-flex align-items-stretch mb-3">
+            <div class="card">
+                <img src="img/300x300.png" alt="" class="card-img-top img-fluid">
+                <div class="card-body">
+                    <h3 class="card-title">Card </h3>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet dicta fugit molestiae necessitatibus obcaecati odit praesentium quos rem repellendus tempore!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 d-flex align-items-stretch mb-3">
+            <div class="card">
+                <img src="img/300x300.png" alt="" class="card-img-top img-fluid">
+                <div class="card-body">
+                    <h3 class="card-title">Card </h3>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aspernatur assumenda cum eaque magnam modi nemo nostrum repellendus veritatis voluptatem!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 d-flex align-items-stretch mb-3">
+            <div class="card">
+                <img src="img/300x300.png" alt="" class="card-img-top img-fluid">
+                <div class="card-body">
+                    <h3 class="card-title">Card </h3>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aliquam atque commodi corporis ex expedita fugit iste neque reiciendis reprehenderit?</p>ates.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 d-flex align-items-stretch mb-3">
+            <div class="card">
+                <img src="img/300x300.png" alt="" class="card-img-top img-fluid">
+                <div class="card-body">
+                    <h3 class="card-title">Card </h3>
+                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam explicabo porro provident quidem sint! Architecto eligendi iusto natus necessitatibus recusandae!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="row">
+        <div class="col">
+            <h2>Some Form</h2>
+            <form action="" method="POST" name="feedback-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input class="form-control" type="text" name="username" id="username" placeholder="Enter username">
+                </div>
+                <div class="form-group">
+                    <label for="feedback">Feedback</label>
+                    <textarea class="form-control" name="feedback" id="feedback" cols="30" rows="10" placeholder="Give us your opinion"></textarea>
+                </div>
+                <button class="btn btn-primary btn-block">Submit</button>
+            </form>
+        </div>
+    </section>
+    <hr>
+    <section>
+        <p class="cowboy" id="cowboy"
+           data-1="howdy"
+           data-author="Justin Reich"
+           data-genre="fiction"
+           data-device="mobile">
+            This is a test sentence about cowboys.
+        </p>
+    </section>
+
+</main>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="js/dom-lecture.js"></script>
+
+</body>
+</html>
+BIN +1.11 KB img/300x300.png
+Binary file not shown.
+99  js/dom-lecture.js
+@@ -0,0 +1,99 @@
+"use strict";
+
+// ========== Retrieve elements by id, class, tag name -
+//UNCOMMENT TO SEE HOW IT WORKS.  YOU CAN REFERENCE ABOVE TO SEE WHAT ITS ACCESSING
+//returns one single node
+
+// id
+// var header = document.getElementById('main-title');
+// console.log(header);
+
+//header.innerHTML = "Hello Ganymede"; //changed the words.
+
+//var smallHeading = document.getElementById('small-heading');
+//console.log(smallHeading);
+
+//---------------------------------------
+// class - will return an HTMLCollection
+//----------------------------------------
+//***get by class name will return a collection of nodes
+
+// var cards = document.getElementsByClassName('card');
+// console.log(cards);
+// console.log(cards[0]);
+
+/**************************My Notes**************************************
+
+//*****NOTE, THESE ARE NOT THE SAME AS AN ARRAY AND CAN'T USE ARRAY METHODS LIKE POP, BUT YOU CAN CONVERT TO AN ARRAY, THEN MANIPULATE
+//***even though they are aren't arrays, they are zero indexed.
+//***we can use loops (even without converting to arrayas to make changes but turning into arrarys allow us access to array manipulation methods.
+//***********************************************************************
+
+
+var cardsArr = SEE PHONE TO COMPLETE:
+
+// cards.pop(); // ERROR: Array specific method
+// var cardsArr = Array.from(cards); // convert HTMLCollection and NodeList to Array
+// cardsArr.pop();
+
+// tag --------also returns a collection------------------------------------------------------
+//*********even if theres only one , its still a collection.
+
+// var h1 = document.getElementByTagName('h1');
+console.log(h1[0]);
+
+
+//     var sections = document.getElementsByTagName('section');
+//     console.log(sections);
+
+
+// ========== Query Selector and Query Selector All=======================================
+
+// querySelector()
+
+//**************************My Notes**************************************
+//***anything you can put in css to taget an element, you can put in the () of querySelector
+//single node
+
+//newer methods than above.
+//**********************************************************************
+
+// var headerTitle = document.querySelector('header h1');
+// var headerTitle = document.querySelector('#main-title');
+// console.log(headerTitle);
+//
+// var li = document.querySelector('li'); // only returns first matching
+// console.log(li);
+//
+// var secondLi = document.querySelector('li:nth-child(2)');
+// console.log(secondLi);
+
+
+// querySelectorAll()
+//**************************My Notes**************************************
+//returns a collection
+//
+//***********************************************************************
+
+// var lis = document.querySelectorAll("li");
+// console.log(lis);
+
+
+
+
+// ========== Direct access to form inputs
+
+// var forms = document.forms;
+// console.log(forms['feedback-form'].feedback.value);
+
+
+// ========== Accessing and modifying elements and properties
+
+//**************************My Notes**************************************
+//inner HTML show the html that makes up the element
+//the innertext shows the text in the element
+//you can get the current value by looking at the innerHTML
+
+//var body = document.getElementByTagName('body);
+//returns a collection of tag nodes and stores them in the variable body
+//console.log(body[0].innerHTML);
+//console.log(body[0].innerText);
+//to access the text in the body:
+
+
+
+// get value of innerHTML
+//     var title = document.getElementById("main-title");
+//     console.log(title);
+//
+//     console.log(title.innerHTML);
+//     console.log(title.innerText);
+
+// set value of innerHTML
+//     title.innerHTML = "<em>Hi MOM!</em>";
+
+// set value of innerText
+//     title.innerText = "<em>Hi MOM!</em>";
+//this will include the <em></em> as part of the text.
+
+
+
+// append value to innerText (works the same with innerHTML)
+//     title.innerHTML += " ...and hi Mom!";
+
+
+// ========== Accessing and modifying attributes
+//hasAttribute - does this exist? a true or false question - gives a boolean value
+if your using javascript, you might need to know if it has this attribute.
+//getAttribute - gets the value of an attribute.  can view classes with this
+//setAttribute - creates a new attribute or changes a value of an existing, need to have the name of the attribute and the value we want to set it to.
+//removeAttribute - removes an element.
+
+
+// check if attribute exists
+//     var cowboy = document.getElementById('cowboy');
+//     console.log(cowboy.hasAttribute('data-1'));
+
+// get an attribute value
+//     console.log(cowboy.getAttribute('data-1'));
+
+// create a new attribute or change a value of an existing attribute
+//     cowboy.setAttribute('data-1', 'hello');
+//     cowboy.setAttribute('data-test', 'testing');
+//     console.log(cowboy.getAttribute('data-1'));
+
+// remove attribute
+//     cowboy.removeAttribute("data-test");
+//     console.log(cowboy);
+
+
+// ========== Accessing and modifying styles
+
+// single style
+//     var jumbotron = document.querySelector('.jumbotron');
+//     jumbotron.style.display = "none";
+//     jumbotron.style['font-family'] = "times";
+
+
+// ========== Add / Remove Elements
+
+// see curriculum links

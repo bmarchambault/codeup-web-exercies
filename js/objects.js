@@ -14,6 +14,12 @@
 var person = {};
 person.firstName = " Bobbie ";
 person.lastName = "Archambault ";
+
+//instuctors solution:
+//     var person = {
+//     firstName: "Bobbie ",
+//     lastName: "Archambault"
+//     };
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -27,7 +33,8 @@ person.sayHello = function(){
     return 'Hello from' + person.firstName + person.lastName;
 }
 console.log(person.sayHello());
-
+//Instructor/class solution:
+//Same as mine
 
     /** TODO:
      * HEB has an offer for the shoppers that buy products amounting to more than $200.
@@ -75,7 +82,18 @@ shoppers.forEach(function(shopper) {
             console.log()
         }
     });
-
+//instructor solution:
+    //created function first
+    // function discountChecker(shoppers){
+    //     shoppers.forEach(function (shopper) {
+    //         if (shopper.amount >= 200){
+    //             console.log(shopper.name + " has spent $" + shopper.amount.toFixed(2) + " today.  They qualify for a 12% discount, the new total is: $" + (shopper.amount - (shopper.amount * .12)).toFixed(2 + "."));
+    //         } else{
+    //             console.log(shopper.name + ", thanks for shopping with us today.  Your total is: $" + shopper.amount + ".  You only need $" + ((200 - shoppers.amount).toFixed(2))) + " to qualify for a 12% discount."
+    //         }
+    //
+    //     })
+    // }
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -89,6 +107,33 @@ shoppers.forEach(function(shopper) {
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+
+    var books = [
+        {
+            title: "Damja",
+            author: {
+                firstName: "Anne",
+                lastName: "McCaffery",
+            },
+        },{
+            title: "Player Piano",
+            author: {
+                firstName: "Kurt",
+                lastName: "Vonnegut",
+            },
+        }, {
+            title: "Osage County",
+            author: {
+                firstName: "Tracy",
+                lastName: "Letts",
+            }
+        }, {
+            title: "Where the Sidewalk Ends",
+            author: {
+                firstName: "Shel",
+                lastName: "Silverstien",
+            }
+        }];
 
     /**
      * TODO:
@@ -115,6 +160,27 @@ shoppers.forEach(function(shopper) {
      *      ...
      */
 
+    books.forEach(function (book,) {
+        var titleMessage = "Book " + books[0].title + ", is:  " + book.title + ".";
+        var author = book.author.firstName + book.author.lastName;
+        var authorMessage = "The book was written by, " + author;
+        console.log(titleMessage + authorMessage + author);
+    })
+
+
+//instructor/class solution: using a for loop
+    function loggingBooks(books) {
+        for (var x = 0; x < books.length; x++) {
+            console.log("Book #" + (x + 1) + "\n" + "Book Title: " + books[x].title + "\n" + "Book Author: " + books[x].author.firstName + " " + books[x].author.lastName);
+        }
+    }
+loggingBooks(books)
+
+//as a for each
+    books.forEach(function (book, index) {
+        console.log("Book #" + (index + 1) + "\n" + "Book Title: " + books[index].title + "\n" + "Book Author: " + books[index].author.firstName + " " + books[index].author.lastName);
+    })
+
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -125,5 +191,18 @@ shoppers.forEach(function(shopper) {
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+
+    function createBook(title, fName, lName){
+        return {title: title,
+                author: {
+                    firstName:fName,
+                    lastName:lName
+        }
+        };
+        arr.push(newBook);
+        return arr;
+    }
+    createBook(title, fName, lName);
+    loggingBooks(books);
 
 })();

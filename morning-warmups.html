@@ -188,10 +188,40 @@ var favTVShows = ['The Handmaids Tale', 'Chicago Fire', 'something i can not thi
 console.log(fizzBuzz(9));
 
 
+// Create a function that takes in a array input and returns true if one of the elements is a number that matches
+// the number of total elements in the array.
+//     Example input: [1]
+// Example output: true
+// Example input: ['bob', 3, false]
+// Example output: true
+// Example input: [{'a': 'hello'}, 10, true]
+// Example output: false
+// Example input: [5, {'a': 'hello'}, 30, true, null]
+// Example output: true
 
+var array = ['one', 'two', 'three'];
 
+    function matchArrayNum(arr){
+        arr.forEach(function(element){
+            if (parseFloat(element) === arr.length) {
+                return true;
+            }
+        });
+    }
 
+console.log(matchArrayNum(array));
 
+    // instructor solution
+function elementMatchArrLength(arr){
+    for (var i = 0; i < arr.length; i += 1){
+        if (arr[i] === arr.length){
+            return true;
+        }
+    }
+}
+for(var i = 0; i < arr.length; i +=1) {
+    console.log(elementMatchArrLength(arr[i]));
+}
 
 
 
