@@ -211,21 +211,32 @@ var array = ['one', 'two', 'three'];
 
 console.log(matchArrayNum(array));
 
-    // instructor solution
-function elementMatchArrLength(arr){
-    for (var i = 0; i < arr.length; i += 1){
-        if (arr[i] === arr.length){
-            return true;
-        }
+//     // instructor solution
+// function elementMatchArrLength(arr){
+//     for (var i = 0; i < arr.length; i += 1){
+//         if (arr[i] === arr.length){
+//             return true;
+//         }
+//     }
+// }
+// for(var i = 0; i < arr.length; i +=1) {
+//     console.log(elementMatchArrLength(arr[i]));
+// }
+
+
+ // Write a javascript function that takes in a number and returns the number raised to the power of four.
+// If any argument is passed into the function that is not a number, return false.
+
+    function numToPowOfFour(num) {
+      if (!isNaN(num) && typeof num === "number"){//typeof num === "number" catches boolean values and turns to false
+          return num ** 4;
+      }else{
+          return false;
+      }
     }
-}
-for(var i = 0; i < arr.length; i +=1) {
-    console.log(elementMatchArrLength(arr[i]));
-}
 
-
-
-
+console.log(numToPowOfFour(4));
+console.log(numToPowOfFour('house'));
 
 
 

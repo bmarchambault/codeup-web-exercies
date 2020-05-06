@@ -24,7 +24,10 @@
     pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
-
+<button id="btn1">Change Main Header. </button>
+<button id="btn2">Change Sub Header </button>
+<button id="btn3">Change List Items </button>
+<button id="btn4">Change Sub Paragraphs. </button>
 <script>
     (function() {
         "use strict";
@@ -32,34 +35,87 @@
         var mainHeader = document.getElementById("main-header");
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-mainHeader.innerHTML = "JavaScript is Cool";
+// mainHeader.innerHTML = "JavaScript is Cool";
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById('sub-header');
-console.log(subHeader);
+// console.log(subHeader);
 
         // TODO: Set the text color of subHeader to blue
-subHeader.style.color = "blue";
+// subHeader.style.color = "blue";
         // TODO: Uncomment the next line and get all list items
         var listItems = document.querySelectorAll("li") ;
-        console.log(listItems);
+        //also documents.getElementByTagName('li);
+        // console.log(listItems);
 
         // TODO: Set text color on every other list item to grey
-        listItems[1].style.color = "grey";
-        listItems[3].style.color = "grey";
+        // /for (var i = 0; i < listItems.length; i += 1) {
+        //      if(i % 2 === 0) {
+        //          listItem[i].style.color = "grey";
+        //      }
+        //          console.log(listItems[i].getAttribute('data-dbid');
+        //          var dbid = listItems[i].getAttribute('data-dbid');
+        //      if(dbid === "1") {
+        //          listItems[i].style.color = "blue";
+        // }
+        // }
 
+        ///use the loop so that it can be dynamic.
+
+        // listItems[1].style.color = "grey";
+        // listItems[3].style.color = "grey";
         // TODO: Set text color of li with dbid = 1 to blue
-       listItems[0].style.color = 'blue';
-       //how do i target li with dbid?
-
-
+       // listItems[0].style.color = 'blue';
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
-        var subParagraphs = document.getElementsByClassName("sub-paragraph");
-        console.log(subParagraphs);
-
+        var subParagraphs = document.getElementsByClassName('sub-paragraph');
+            // console.log(subParagraphs);
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-       console.log(subParagraphs[0].innerHTML);//make sure not to forget the indexing here
-        console.log(subParagraphs[0].innerText)
-        subParagraphs[0].innerText = 'Mission Accomplished!';
+        // subParagraphs[0].innerText = "Mission Accomplished!"
+
+
+        // DOM EVENT LISTENER EXERCISE
+//         Please follow the instructions below.
+//
+//             Open the HTML file named dom-query-js.html that you created in the last lesson.
+//             Add 4 buttons to the page. Attach click event listeners to each of the buttons and have the handlers
+//             perform the modifications that were automatically taking place. For example, the first button should set
+//             inner html of mainHeader to "JavaScript is Cool".
+//             View the results in your browser to test for the expected output.
+//             Finally, save your work, commit the changes to your git repository, and push to GitHub.
+
+
+ //as a function definition:
+        function mainHeaderHandler(){
+            //var mainHeader created above, but would normally be included here.
+            mainHeader.innerHTML = "JavaScript is Cool";
+        }
+
+    //as a function expression
+
+        var subHeaderHandler = function(){
+            subHeader.style.color = "blue";
+        }
+
+        //the following is a third way.  you add the event lister and take in the handler function unnamed annonymous function as the second  parameter.  the downside is that you can't call this function for later use.  also, you're unable to remove the event later because theres no function to refer to later.
+        document.getElementById('btn3').addEventListener('click', function (){
+            for (var i = 0; i < listItems.length; i += 1) {
+            if(i % 2 === 0) {
+                listItems[i].style.color = "grey";
+            }
+            console.log(listItems[i].getAttribute('data-dbid'));
+            var dbid = listItems[i].getAttribute('data-dbid');
+            if(dbid === "1") {
+                listItems[i].style.color = "blue";
+            }
+        }
+        });
+
+        var subParagrahshandler = function(){
+            subParagraphs[0].innerText = "Mission Accomplished!";
+        }
+        document.getElementById('btn1').addEventListener('click', mainHeaderHandler);
+        document.getElementById('btn2').addEventListener('click', subHeaderHandler);
+
+        document.getElementById('btn4').addEventListener('click', subParagrahshandler);
 
     })();
 </script>
