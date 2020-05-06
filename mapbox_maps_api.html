@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox API exercise</title>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
+
+</head>
+<body>
+Generate a map that shows the city with your favorite restaurant using geocoding.
+Redraw the map of the above location at zoom levels 5, 15, and 20. Do this by simply changing the value of zoom level
+where the map properties are initially set and refresh the page to see the changes. Can the zoom be changed
+programmatically after the initial map is drawn?
+Create a marker on your map of the exact location of your favorite restaurant set the zoom to allow for best viewing distance.
+Create a popup with the name of the restaurant.
+Make sure the info window does not display until the marker has been clicked on.
+Refactor your code to display at least three of your favorite restaurants with information about each.
+Create an array of objects with information about each restaurant to accomplish this. Use a .forEach() loop rather
+than a for loop.
+
+
+
+<div id='map' style='width: 400px; height: 300px;'></div>
+<button id="infoBtn">Click here to see a list of some retaurants I frequent:</button>
+
+<div id = 'listOfRestaurants'>
+
+</div>
+
+<script src ='js/keys.js'></script>
+<script>
+    mapboxgl.accessToken = mapboxKey;
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        // center: [-98.1245, 29.7030]
+    });
+
+    // method to search for a physical address based on inputted coordinates
+    function geocode(search, token) {
+        var baseUrl = 'https://api.mapbox.com';
+        var endPoint = '/geocoding/v5/mapbox.places/';
+        return fetch(baseUrl + endPoint + encodeURIComponent(search) + '.json' + "?" + 'access_token=' + token)
+            .then(function(res) {
+                return res.json();
+                // to get all the data from the request, comment out the following three lines...
+            }).then(function(data) {
+                return data.features[0].center;
+            });
+    }
+    geocode("New Braunfels, TX 78130", mapboxKey).then(function(result) {
+    console.log(result);
+    map.setCenter(result);
+    map.setZoom(11);
+     })
+
+    // 1042 Interstate 35 Frontage Rd,
+//Redraw the map of the above location at zoom levels 5, 15, and 20. Do this by simply changing the value of zoom level
+//     where the map properties are initially set and refresh the page to see the changes. Can the zoom be changed
+//     programmatically after the initial map is drawn?
+//     setTimeout(function(){
+//         map.setZoom(10);
+//         map.setZoom(15);
+//         map.setZoom(20);
+//     }, 5000);
+
+//    Create a marker on your map of the exact location of your favorite restaurant set the zoom to allow for best
+    //    viewing distance.
+
+    var marker = new mapboxgl.Marker ({
+        draggable: true
+    })
+        .setLngLat ({lng: -98.09555, lat: 29.697437})
+        .addTo(map);
+
+//    Create a popup with the name of the restaurant.
+//    Make sure the info window does not display until the marker has been clicked on.
+
+    var popup = new mapboxgl.Popup();
+        popup.setHTML('<h3> Golden Corral <\h3>');
+        marker.setPopup(popup);
+
+// Refactor your code to display at least three of your favorite restaurants with information about each.
+//     Create an array of objects with information about each restaurant to accomplish this. Use a .forEach() loop rather
+//     than a for loop.
+
+    var restaurants = [
+        {
+            name: 'Golden Corral',
+            address: '1042 Interstate 35 Frontage Rd, New Braunfels, TX 78130}',
+        },{
+            name: 'Union Station Diner',
+            address: '512 E San Antonio St, New Braunfels, TX 78130',
+        },{
+            name: 'Buttermilk Cafe',
+            address: '1324 Common St, New Braunfels, TX 78130',
+        }
+    ];
+
+function displayArrayInfo(){
+    var displayList = document.getElementById('listOfRestaurants');
+    displayList.innerText = "" + restaurants.name + '\n' + restaurants.address;
+
+    restaurants.forEach(function(restaurant){
+console.log( " " + restaurant.name + "\n " + restaurant.address);
+
+
+    });
+    }
+console.log(displayArrayInfo());
+
+    //
+    // function mainHeaderHandler(){
+    //     var mainHeader = document.getElementById("main-header");
+    //     mainHeader.innerHTML = "JavaScript is Cool";
+    // }
+    document.getElementById('infoBtn').addEventListener('click', displayArrayInfo);
+
+
+
+</script>
+</body>
+</html>

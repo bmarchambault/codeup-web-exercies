@@ -361,7 +361,8 @@
 
     // console.log(peridot["owner"]["name"]);
 
-    // Iterate through our dogs array, and log a message to the console based on their breed property. If the breed is an array longer than one, log a message stating they are a mix of the different elements.
+    // Iterate through our dogs array, and log a message to the console based on their breed property.
+    // If the breed is an array longer than one, log a message stating they are a mix of the different elements.
 
     dogs.forEach(function(dog) {
         var str = "";
