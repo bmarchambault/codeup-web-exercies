@@ -25,7 +25,18 @@ than a for loop.
 <button id="infoBtn">Click here to see a list of some retaurants I frequent:</button>
 
 <div id = 'listOfRestaurants'>
-
+    <p>name
+        <br>
+        address
+    </p>
+    <p>name
+        <br>
+        address
+    </p>
+    <p>name
+        <br>
+        address
+    </p>
 </div>
 
 <script src ='js/keys.js'></script>
@@ -88,7 +99,7 @@ than a for loop.
     var restaurants = [
         {
             name: 'Golden Corral',
-            address: '1042 Interstate 35 Frontage Rd, New Braunfels, TX 78130}',
+            address: '1042 Interstate 35 Frontage Rd, New Braunfels, TX 78130',
         },{
             name: 'Union Station Diner',
             address: '512 E San Antonio St, New Braunfels, TX 78130',
@@ -98,24 +109,61 @@ than a for loop.
         }
     ];
 
+
+    //this function is saying, i want to display the array info. heres the two variables i'm working with.  use this loop to fill the restaurantList bucket.  fill the bucket with this information.  after the loop has ran through the array and filled the bucket, change the innerhtml to the information in the bucket.
 function displayArrayInfo(){
     var displayList = document.getElementById('listOfRestaurants');
-    displayList.innerText = "" + restaurants.name + '\n' + restaurants.address;
+    var restaurantList = '';//without the empty string, this will say undefined and then concat the loop info.
+//this variable needs to be in this scope of the function to run
+    restaurants.forEach(function(restaurant){//loop starts
+        console.log( " " + restaurant.name + "\n " + restaurant.address);
+        restaurantList += '<p>' + restaurant.name + '<br>' + restaurant.address + '<\p>';//here the variable is told what to hold.  if the variable was defined in here, the loop would empty and reload each time around and the out put would be the last thing it loaded
 
-    restaurants.forEach(function(restaurant){
-console.log( " " + restaurant.name + "\n " + restaurant.address);
+    });//loop ends here
+    displayList.innerHTML = restaurantList;//after the loop, we want the function to this
+
+}//end of function
+document.getElementById('infoBtn').addEventListener('click', displayArrayInfo); //this is attaching an event to the button that once you click it, the html will change to display what was put in the buck:
 
 
-    });
-    }
-console.log(displayArrayInfo());
+
+
+  //  a different solutuion.
+    //this loop says, go throught the loop and get address for  all the restaurants via the geo code function.  before .then, we are asking the server to give us the coordinates.  the .then means, after you give us the info, do this.  next we want to create markers for each restaurant and a popup for each.  for the popup, say this.
+/* restaurants.forEach(function(restaurant){
+        geocode(restaurant.address, mapboxKey).then(function(coords){
+            console.log(coords);
+            //create the markers using the coords
+            var marker = new mapboxgl.Marker()
+                .setLngLat(coords)
+                .addTo(map);
+            var popup = new mapboxgl.Popup()
+                .setHTML ('<h3>' + restaurant.name + '<\h3>' + '<p>' + restaurant.address + '<\p>);
+                marker.setPopup(popup);
+        });
+        });
+
+
+
+
+
+
+
+// console.log(displayArrayInfo());//if you console.log a function, the function will fire prematurely.
 
     //
     // function mainHeaderHandler(){
     //     var mainHeader = document.getElementById("main-header");
     //     mainHeader.innerHTML = "JavaScript is Cool";
     // }
-    document.getElementById('infoBtn').addEventListener('click', displayArrayInfo);
+   /*
+    <p>name
+    <br>
+    address
+    </p>
+
+    */
+
 
 
 
