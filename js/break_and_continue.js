@@ -31,6 +31,34 @@
 // Here is an odd number: 45
 // Here is an odd number: 47
 // Here is an odd number: 49
+
+function isNumeric(num){
+    return !isNaN(num);
+}
+function oddNum(num){
+    return num % 2 !===0;
+}
+
+function numGame() {
+    do {
+        let userNum = prompt('Please enter an odd number between 1 & 50');
+        let isValidNumber = isNumeric(userNum) && oddNumber(userNum);
+        if (isValidNumber){
+            console.log('Number to skip is ' + userNum);
+            break;
+        }else{
+            alert("that's not a valid number.");
+        }
+    } while (true);
+    for (var i = 1; 1 <= 50; i++) {
+        if ()
+    }
+}
+
+
+
+
+
 function isValidNumber ()...
 do{
     var getUserNumber = parseFloat (prompt("Please enter an odd number between 1 & 50."));//numeric value
