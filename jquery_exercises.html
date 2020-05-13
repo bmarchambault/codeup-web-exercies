@@ -5,14 +5,83 @@
     <title>JQuery Curriculum Exercise</title>
 </head>
 <body>
+<h1 class="main-header"> This is my header</h1>
 
+<div>
+    <h4 class="codeup">Codeup List</h4>
+    <ul id="list-one">
+        <li>list item one        </li>
+        <li>list item two</li>
+        <li>list item three</li>
+    </ul>
+</div>
+<hr>
+<p id="paragraph">
+    Hello, read my paragraph.
+</p>
 
+<p>Here is a paragraph.  i didn't use generic text filler though maybe i should have.  I know this is a short paragraph, but technically, it only needs to be four to six sentences.  This is sentence four.  </p>
 
-
-
-
+<div>
+    <h4 class="codeup">Codeup List Two</h4>
+    <ul id="list-two">
+        <li>list item one        </li>
+        <li>list item two</li>
+        <li>list item three</li>
+    </ul>
+</div>
+<br>
+<div>
+    <h4 class="codeup">Codeup List Three</h4>
+    <ul id="list-three">
+        <li>list item one        </li>
+        <li>list item two</li>
+        <li>list item three</li>
+    </ul>
+</div>
 
 <script src="js/jquery-2.2.4.js"></script>
-<script src="js/jquery_exercise_js.js"></script>
+<script>
+    // $('li').css('font-size', '20px');//element selector
+    // $('.codeup').css('border', 'solid 1px orange');//class selector
+    // var paraContent = $('#paragraph').html();//id selector.  creating an alert with id selector.
+    // alert(paraContent);
+    //
+    // var contents = $('.main-header').html();//class selector
+    // alert(contents);//alerts the contents of my header
+    //
+    // $('h1,#paragraph,h4').css('background-color', 'yellow');//multiple selector, a mix of selectors will work. no spaces
+    //
+    // // syntax for multiple changes to one item:
+    // $('selector').method({//created an object here with curly braces.
+    //     'what to change:': "value",
+    //     'what to change': "value",
+    // })
+//================================================================
+    // Add jQuery code that will change the background color of an h1 element when clicked.
+    //     Make all paragraphs have a font size of 18px when they are double clicked.
+    //     Set all li text color to red when the mouse is hovering; reset to black when it is not.
+//======================================================================
+$('p').dblclick(function(){
+    $(this).css({'color': 'blue', 'font-size': "18px"}).off('dblclick')
+})
+
+$('h1').click(function(){
+    $(this).css ('background-color', 'red')
+})
+
+$('li').hover(function() {
+    $(this).css('color', 'green');
+}, function(){
+    $(this).css('color', 'black');
+});
+
+
+</script>
+
+
+
+
+<!--<script src="js/jquery_exercise_js.js"></script>-->
 </body>
 </html>
