@@ -1,0 +1,172 @@
+The traversing methods covered in this unit:
+•	.each() — Iterate over a jQuery object, executing a function for each matched element.
+•	.first() — Reduce the set of matched elements to the first in the set.
+•	.last() — Reduce the set of matched elements to the final one in the set.
+•	.parent() — Get the parent of each element in the current set of matched elements, optionally filtered by a selector.
+•	.children() — Get the children of each element in the set of matched elements, optionally filtered by a selector.
+•	.next() — Get the immediately following sibling in the set of matched elements.
+•	A selection may return more than one element, and jQuery makes it easy to traverse, or loop through, the elements. On each iteration, the .each() method returns an index (0 based) and the element.
+•	The syntax for .each() is:
+•	.each( function(index, element) { /* ... */ } )
+•
+
+As we see, it passes the index and the element to the callback function at the beginning of each pass.
+
+If we had an unordered list like this one:
+
+
+<ul>
+    <li>Linux</li>
+    <li>Apache</li>
+    <li>MySQL</li>
+    <li>PHP</li>
+    <li>Javascript</li>
+</ul>
+We could use jQuery to highlight every other li element using the .each() method:
+
+
+$('li').each(function(index) {
+    if (index % 2 !== 0) {
+        $(this).css('background-color', '#FF0');
+    }
+});
+The first li element will have an index of 0, so to highlight even rows, we need to add a yellow background to odd indexes.
+
+The element is passed as this, so we can use $(this) to make it a jQuery object.
+
+JS Bin Example
+
+.first()
+Reduce the set of matched elements to the first in the set.
+
+The syntax for first is simply .first().
+
+Using the example list from above, we could highlight the first list item using this code:
+
+
+$('li').first().css('background-color', '#FF0');
+JS Bin Example
+
+.last()
+Reduce the set of matched elements to the final one in the set.
+
+The opposite of .first(), .last() matches the last element in a collection.
+
+To highlight the last list item in our example list, we could use .last():
+
+
+$('li').last().css('background-color', '#FF0');
+JS Bin Example
+
+.children()
+Get the children of each element in the set of matched elements, optionally filtered by a selector.
+
+To get all the child elements of a selected element, we can use the .children() method. This will return all the child elements or all elements selected by the optional selector arguments.
+
+The syntax for .children() is:
+
+
+.children( [selector ] )
+We can use the following structure as an example:
+
+
+<h3>National Parks</h3>
+<ul id="national-parks">
+    <li>Arches</li>
+    <li>Badlands</li>
+    <li>Carlsbad Caverns</li>
+    <li>Denali</li>
+    <li>Everglades</li>
+</ul>
+<h3>State Parks of Texas</h3>
+<ul id="state-parks-texas">
+    <li>Abilene</li>
+    <li>Big Bend</li>
+    <li>Choke Canyon</li>
+    <li>Davis Mountains</li>
+    <li>Enchanted Rock</li>
+</ul>
+We could make all the li elements bold using this bit of jQuery:
+
+
+$('li').css('font-weight', 'bold');
+If we only wanted to manipulate the children of the ul with a class national-parks we could use the .children() method:
+
+
+$('#national-parks').children().css('font-weight', 'bold');
+The output can be seen here:
+
+JS Bin Example
+
+.parent()
+Get the parent of each element in the current set of matched elements, optionally filtered by a selector.
+
+Note: There is also a method called .parents():
+
+The .parents() and .parent() methods are similar, except that the latter only travels a single level up the DOM tree. Also, $( "html" ).parent() method returns a set containing document whereas $( "html" ).parents() returns an empty set. http://api.jquery.com/parent/
+
+The syntax for .parent() and .parents() is:
+
+
+.parent( [selector ] )
+.parents( [selector ] )
+The .parent() method will return only elements one set up the DOM, where .parents() will travel completely up the DOM tree. Both methods allow an option argument with a selector to only retrieve matching elements.
+
+Using the same HTML as before:
+
+
+<h1>Parks List</h1>
+<h3>National Parks</h3>
+<ul id="national-parks">
+    <li>Arches</li>
+    <li>Badlands</li>
+    <li>Carlsbad Caverns</li>
+    <li>Denali</li>
+    <li>Everglades</li>
+</ul>
+<h3>State Parks of Texas</h3>
+<ul id="state-parks-texas">
+    <li>Abilene</li>
+    <li>Big Bend</li>
+    <li>Choke Canyon</li>
+    <li>Davis Mountains</li>
+    <li>Enchanted Rock</li>
+</ul>
+We can color the background of all li elements yellow and the background of their parent ul elements green using this code:
+
+
+$('li').css('background-color', '#FF0');
+$('li').parent().css('background-color', '#0F0');
+JS Bin Example
+
+.next()
+Get the immediately following sibling of each element in the set of matched elements.
+
+Like our other methods, the syntax for .next is simply:
+
+
+.next()
+If we wanted to give the ul with the id of national-parks a salmon background color when the sibling h3 is clicked, we could do it like so:
+
+Note we added an id to the first h3
+
+
+<h3 id="national-parks-heading">National Parks</h3>
+<ul id="national-parks">
+    <li>Arches</li>
+    <li>Badlands</li>
+    <li>Carlsbad Caverns</li>
+    <li>Denali</li>
+    <li>Everglades</li>
+</ul>
+<h3>State Parks of Texas</h3>
+<ul id="state-parks-texas">
+    <li>Abilene</li>
+    <li>Big Bend</li>
+    <li>Choke Canyon</li>
+    <li>Davis Mountains</li>
+    <li>Enchanted Rock</li>
+</ul>
+
+$('#national-parks-heading').next().css('background-color', 'salmon');
+While you could also target the ul with it's id, the above example demonstrates how to use the .next method.
