@@ -1,0 +1,23 @@
+.invisible {
+    visibility: hidden;
+}
+
+.highlight{
+    background-color: antiquewhite;
+}
+
+h3{
+    text-align: center;
+    color: #0a6623;
+    text-decoration: underline;
+}
+dd{
+    color: #0a6623;
+}
+
+dt{
+    color: #692907
+}
+div{
+    text-align:center;
+}

@@ -1,5 +1,5 @@
-'use strict'
-// (function($){
+'use strict';
+(function($){
     $(document).ready(function(){
 var audioFile = ('../audio/pew-pew.mp3');
         // an array with the keys in the pattern. use the console.log on the html page to findout what the keys are.
@@ -177,4 +177,4 @@ var pandaMsg = $('h2').html("Check out Double-OH-Panda.  Oh!  They missed") ;
 
 
     });
-// })(jQuery);
+})(jQuery);
