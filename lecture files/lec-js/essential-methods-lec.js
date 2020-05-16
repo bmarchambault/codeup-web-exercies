@@ -80,14 +80,28 @@ $(document).ready(function() {
      *********************************************/
 
     // TODO TOGETHER: console log each list element's text
+$('li').each(function(){
+    console.log($(this).html())
+});
 
     // TODO TOGETHER: select all list elements and console log the first match
+   console.log( $('li').first());
 
     // TODO TOGETHER: select all list elements and console log the last match
-
+    console.log( $('li').last());
     // TODO TOGETHER: When I click on a list element, highlight its parent
-
+$('li').click(function(){
+    $(this).parent().css('background-color', 'yellow');
+});
     // TODO TOGETHER: When I click into a <ul>, console log last child in that group
+$('ul').click(function () {
+    $(this).children().last();//to see if you selected the right one, replace this like with: console.log($(this).children().last().html());
+})
+
+    //TODO:  add the id of r-heading to the ravenclaw in html.  then change the sibling element background color.
+    $('#r-heading').click(function () {
+        $(this).next().css('background-color', 'blue');
+    })
 
     // TODO TOGETHER: When I click on any list element, console log the next element
 

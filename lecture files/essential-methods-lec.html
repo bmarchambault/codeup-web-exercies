@@ -28,9 +28,9 @@
          </section>
         <div class="row">
             <!--Gryffindor-->
-            <section class="column one-quarter">
-                <h3 id="gryffindor-house" class="house-name">Gryffindor</h3>
-                <ul id="gryffindor">
+            <section class="column one-quarter"><!--PARENT OF UL AND H3-->
+                <h3 id="gryffindor-house" class="house-name">Gryffindor</h3><!--SIBLING OF UL-->
+                <ul id="gryffindor"><!--PARENT OF LI-->
                     <li class="wizards">Terrell</li>
                     <li class="wizards">Daniel</li>
                     <li class="wizards">Josh</li>
@@ -48,7 +48,7 @@
             </section>
             <!--Ravenclaw-->
             <section class="column one-quarter">
-                <h3 class="house-name">Ravenclaw</h3>
+                <h3 class="house-name" id="r-heading">Ravenclaw</h3>
                 <ul id="ravenclaw">
                     <li class="wizards">Fer</li>
                     <li class="witches">Elle</li>
