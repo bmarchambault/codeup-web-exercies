@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax Blog</title>
+</head>
+<body>
+
+<div id="posts">
+<!--    <h3>title</h3>-->
+<!--    <p id="date"></p>-->
+    <div>image here please</div>
+<!--    <p class="content">content</p>-->
+<!--    <p class='categories'>categories</p>-->
+</div>
+<button>Update Posts</button>
+<!--=============================================================================-->
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+ $.get('data/blog.json').done(function(resp){
+     for (var i = resp.length -1; i >= 0; i--){
+        $('#posts').append('<h3>' + resp[i].title + '</h3>' +  '<p>' + resp[i].date + '</p>' + '<p>' + resp[i].content + '</p>' + '<p>' + resp[i].categories.join(", ") + '</p>');
+     }
+ })
+
+$('button').click(function(){
+    $.get('data/blog.json').done(function(resp){
+        var blogUpdate = "";
+        resp.forEach(function(post){
+            blogUpdate += '<h3>' + post.title + '</h3>' +  '<p>' + post.date + '</p>' + '<p>' + post.content + '</p>' + '<p>' + post.categories.join(", ") + '</p>'
+        })
+        $('#posts').html(blogUpdate);
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
