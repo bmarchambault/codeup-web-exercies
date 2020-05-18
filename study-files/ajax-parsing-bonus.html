@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax and Parsing Bonus</title>
+    <style>
+        .container{margin:auto; width:50%;}
+        #contentArea{width: 400px; height: 300px; border: 2px solid orange}
+        #getJoke{ color: saddlebrown;}
+        #getQuote{color: darkolivegreen}
+    </style>
+</head>
+<body>
+<h3>Joke and Quote</h3>
+<div class="container">
+<div id="contentArea"></div>
+<button id="getJoke">Joke</button>
+<button id="getQuote">Quote</button>
+
+</div>
+
+<h3>Restaurant API </h3>
+
+
+
+
+
+<!--===================================================html above this line=====================================-->
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script>
+    'use strict';
+    $(document).ready(function(){
+    //   --------------joke and quote--------------------------------
+        //maybe set them in a function and use the button to call so it wouldn't keep appending.
+
+    $('#getJoke').click(function(){
+
+        $.ajax('http://api.icndb.com/jokes/random/').done(function(resp) {
+            $('#contentArea').append('<p>' + 'Chuck Norris Joke: ' + '</p>' + '<p>' + resp.value.joke + '</p>')
+            // console.log(resp.value.joke);
+        } )
+    })
+    $('#getQuote').click(function(){
+        $.ajax('http://quotes.stormconsultancy.co.uk/random.json').done(function(resp){
+        $('#contentArea').append('<p>' + 'Programming Quote: ' + '</p>' + '<p>' + resp.quote + '</p>' + '<p>' + resp.author + '</p>')
+        //     console.log(resp);
+         })
+    })
+        //----------------Restaurant API below------------------------------------------
+
+
+
+
+
+
+    //-------------------------------------------------
+    });
+
+</script>
+
+
+
+
+</body>
+</html>
