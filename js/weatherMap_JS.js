@@ -21,34 +21,57 @@ $(document).ready(function() {
         units: 'imperial'
     };
 
-    // $('button').click(function(){
+    //
     $.get(weatherUrl, weatherOptions).done(function (data) {
+        console.log(data.daily[0]);
         // console.log(data.daily[0].dt);
         // console.log(data.daily[0].humidity);
         // console.log(data.daily[0].temp.min);
         // console.log(data.daily[0].temp.max);
-        // console.log(data.daily[0].weather.description);
+        console.log(data.daily[0].weather.description);
         // console.log(data.daily[0].wind_speed);
         // console.log(data.daily[0].pressure);
         // var weatherForecast = '';
-
+    })
         // data.daily.forEach(function () {
-        for(var i = 0; i < data.length; i++){
 
-            var html = '<div>' + new Date(data.daily[i].dt * 1000).toLocaleDateString() + '</div>';
-            // html += '<ul class="forecast-list list-group list-group-flush">';
-            // html += '<li class="list-group-item>' + data.daily[i].temp.min + ' - ' + data.daily.temp.max + '</li>';
-            // html += '<li class="list-group-item>' + data.daily[i].weather.description + '</li>';
-            // html += '<li class="list-group-item>' + data.daily[i].humidity + '</li>';
-            // html += '<li class="list-group-item>' + data.daily[i].wind_speed + '</li>';
-            // html += '<li class="list-group-item>' + data.daily[i].pressure + '</li>';
-            // html += '</ul>';
-            html += '</div>';
+    // $('button').click(function(){
+        $.get(weatherUrl, weatherOptions).done(function (data) {
+            var dayZero = '';
+            var dayOne = '';
+            var dayTwo = '';
+            var dayThree = '';
+            var dayFour = '';
+        for(var i = 0; i < data.daily.length; i++){
+
+            var html = '<div class="card-header">' + new Date(data.daily[i].dt * 1000).toLocaleDateString()  + '</div>';
+            html += '<ul class="forecast-list list-group list-group-flush" >';
+            html += '<li class="list-group-item">' + 'Temp range min-max: ' + data.daily[i].temp.min + ' - ' + data.daily[i].temp.max + '</li>';
+            html += '<li class="list-group-item">' + 'Description: ' + data.daily[i].weather[0].description + '</li>';
+            html += '<li class="list-group-item">' + 'Humidity: ' + data.daily[i].humidity + '</li>';
+            html += '<li class="list-group-item">' + 'Wind Speed: ' + data.daily[i].wind_speed + '</li>';
+            html += '<li class="list-group-item">' + 'Pressure: ' + data.daily[i].pressure + '</li>';
+            html += '</ul>';
+
+            if(i === 0){
+                dayZero += html;
+            }else if (i === 1){
+                dayOne += html;
+            }else if (i === 2){
+                dayTwo += html;
+            }else if(i === 3){
+                dayThree += html;
+            }else if(i === 4){
+                dayFour += html
+            }
 
         }
         // console.log(html);
-        $('.forecastCard').append(html);
-
+        $('#forecastZero').append(dayZero);
+        $('#forecastOne').append(dayOne);
+        $('#forecastTwo').append(dayTwo);
+        $('#forecastThree').append(dayThree);
+        $('#forecastFour').append(dayFour);
     })
 
 
