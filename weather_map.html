@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Map Project</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
     <link href='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.css' rel='stylesheet' />
@@ -10,11 +11,25 @@
     <link rel="stylesheet" href="css/weatherMap_css.css">
 </head>
 <body>
+
+<div id="headerDiv">
+<header id="title-header">Weather Map</header>
+</div>
+
+<nav class="navbar navbar-light " id="currentCity_Navbar">
+  <span class="navbar-text" >
+    Current Location:
+  </span>
+    <span id="currentCity"></span>
+</nav>
+
+
 <nav class="navbar navbar-light bg-light">
-    <a class=" ml-auto">Location</a>
+
     <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <span class=" mr-4">Enter a Location:</span>
+        <input class="form-control mr-sm-2" type="search" id="search_text" placeholder="City, St" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchBtn">Search City</button>
     </form>
 </nav>
 <br>
@@ -25,7 +40,7 @@
 
 
 
-            <div class="card col" id="forecastZero"  >
+            <div class="card col " id="forecastZero"  >
 <!--                <div class="" style="width: 18rem; height: 400px;">-->
 <!--                <div class="card-header">-->
 <!--                    Date-->
@@ -52,8 +67,8 @@
 </div>
 <br>
 <!---------------------MAP BELOW THIS LINE------------------------------>
-<div id='map' style='width: 100%; height: 300px;'></div>
-
+<div id='map'></div>
+<pre id="coordinates" class="coordinates"></pre>
 
 
 
@@ -63,6 +78,21 @@
 <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI=" crossorigin="anonymous"></script>
 <script src="js/keys.js"></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v1.10.0/mapbox-gl.js'></script>
+
+
+<!--//mapbox script for geocoder-------------------------->
+<!--<script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.min.js"></script>-->
+<!--<link-->
+<!--        rel="stylesheet"-->
+<!--        href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.5.1/mapbox-gl-geocoder.css"-->
+<!--        type="text/css"-->
+<!--/>-->
+<!--&lt;!&ndash; Promise polyfill script required to use Mapbox GL Geocoder in IE 11 &ndash;&gt;-->
+<!--<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.min.js"></script>-->
+<!--<script src="https://cdn.jsdelivr.net/npm/es6-promise@4/dist/es6-promise.auto.min.js"></script>-->
+<!--done mapbox script for geocoder for html -------------------------------->
+
+
 <script src="js/weatherMap_JS.js"></script>
 
 </body>
