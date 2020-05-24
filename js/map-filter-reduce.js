@@ -50,6 +50,7 @@ let usersEmails = users.map((user) => `${user.email}`);
 // console.log(totalYearsExperience);//success
 let totalYearsExperience = users.reduce((total, person) => total += person.yearsOfExperience, 0);
 // console.log(totalYearsExperience);//success
+//both of the above work
 
 // function totalYearsOfExperience(array){
 //     var total = 0;
@@ -59,7 +60,9 @@ let totalYearsExperience = users.reduce((total, person) => total += person.years
 //     return total;
 // }
 
-//both of the above work
+const averageExp = totalExp/users.length;
+// console.log(averageExp);
+
 
 // // Use .reduce to get the longest email from the list of users.
     let longestEmail = users.reduce((longestEmail, user) => {
@@ -69,7 +72,7 @@ let totalYearsExperience = users.reduce((total, person) => total += person.years
         } else {
             return user.email;
         }
-    });
+    });//don't need the starting value in this case because we have the return.  but, this last line should be:   }, "");
 
     //
     // let longestEmail = users.reduce((longestEmail, user) => (longestEmail.email.length > user.email.length)
@@ -83,6 +86,14 @@ console.log(longestEmail);
 // Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
 let namesInAString = users.reduce((nameString, user) => nameString + `${user.name}`, "");
 // console.log(namesInAString);//success
+
+let instructorsString = users.reduce((finalString, instructor, index) => {
+    if (index < users.length -1) {
+            return `${finalString}${instructor.name.substring(0,1).toUpperCase()}${instructor.name.substring(1,instructor.name.length).toLowerCase()}, `
+    }else{
+        return '${finalString}${instructor.name.substring(0,1).toUpperCase()}${instructor.name.substring(1,instructor.name.length).toLowerCase()}, '
+    }
+}, "Your instructors are: ");
 
 //Bonus
 //Use .reduce to get the unique list of languages from the list of users.
@@ -109,12 +120,13 @@ let namesInAString = users.reduce((nameString, user) => nameString + `${user.nam
 //      //based on MDN solution, i need to account for the languages being in it own array.  whats the solves?  a for loop or for each or for/of
 // },[]);//starting value (bucket)
 
-let uniqueLangsArray = users.reduce((uniqueLang, user) => {
-    for (let i = 0; i < user.languages.length; i += 1){
-        if (uniqueLang.indexOf(user.languages[i]) === -1) {
-             uniqueLang.push(user.languages[i]);
+let uniqueLangsArray = users.reduce((uniqueLang, user) => {//((langList, user) {
+    for (let i = 0; i < user.languages.length; i += 1){//for (let lang of user.languages){
+        if (uniqueLang.indexOf(user.languages[i]) === -1) {//if (!langlist.includes(lang)){
+             uniqueLang.push(user.languages[i]);//langList.push(lang);
          }
     }
     return uniqueLang;
 },[]);
 console.log(uniqueLangsArray);
+
