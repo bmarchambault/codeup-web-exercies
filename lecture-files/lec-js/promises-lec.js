@@ -66,13 +66,15 @@ console.log(starWarsAPI);
 
 // TODO: Use Promise chaining to console log the json response
 //
-starWarsAPI.then(response => response.json())//after the fat arrow, use console.log (response.json()); to see the response
+// starWarsAPI.then(response => response.json())//after the fat arrow, use console.log (response.json()); to see the response
+//     starWarsAPI.then(response => console.log(response.json()))
     //access the results property from the json object
-    .then(jsonResponse => jsonResponse.results)
-    //access the results property from the json object :  starWarsAPI.then(response => response.json()).then(jsonResponse => console.log(jsonResponse.count));
-    .then(resultsArray => resultsArray.forEach(film => {
-        console.log(film.title + "" + film.episode_id)
-    }))
+    // .then(jsonResponse => jsonResponse.results)
+    // access the results property from the json object :
+    starWarsAPI.then(response => response.json()).then(jsonResponse => console.log(jsonResponse.count))
+    // .then(resultsArray => resultsArray.forEach(film => {
+    //     console.log(film.title + "" + film.episode_id)
+    // }))
     .catch(error => console.log(error));
 // TODO: chain another method that iterates through the results array and console logs the names
 //  of all characters and their birth_years
